@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="Area and circumference of a circle.css" />
+  </head>
+  <body>
+    <div>
+      <form name="circleOne">
+        <h3>Calculate the circumference of a circle.</h3>
+        <br />
+        <p>Radius:</p>
+        <br />
+        <input
+          class="txtChar"
+          onkeypress="enterKeyPressCirc(event); return isNumberKey(event)"
+          type="text"
+          size="20"
+          value=""
+          name="radiusOne"
+        />
+        <input
+          type="button"
+          class="btnCalcCircum"
+          name="circumferanceCalc"
+          value="Calculate!"
+          onclick="circumference()"
+        />
+        <input
+          class="box1"
+          type="reset"
+          name="circumferenceReset"
+          value="Reset"
+        />
+        <input class="box" type="text" size="20" name="circumferenceAnswer" />
+      </form>
+    </div>
+    <div>
+      <br />
+      <br />
+      <form name="circleTwo">
+        <h3>Calculate the area of a circle.</h3>
+        <br />
+        <br />
+        <p>Radius:</p>
+        <br />
+        <input
+          class="txtChar"
+          onkeypress="enterKeyPressArea(event); return isNumberKey(event);"
+          type="text"
+          size="20"
+          value=""
+          name="radiusTwo"
+        />
+        <input
+          type="button"
+          class="btnCalcArea"
+          name="areaCalc"
+          value="Calculate!"
+          onclick="area()"
+        />
+        <input class="box1" type="reset" name="areaReset" value="Reset" />
+        <input class="box" type="text" size="20" name="areaAnswer" />
+      </form>
+    </div>
+    <br />
+    <br />
+    <script>
+      function circumference() {
+        var radius = document.circleOne.radiusOne.value;
+        var circumference = 2 * radius * Math.PI;
+        document.circleOne.circumferenceAnswer.value = circumference;
+      }
+
+      function area() {
+        var radiusArea = document.circleTwo.radiusTwo.value;
+        var area = Math.pow(radiusArea, 2) * Math.PI;
+        document.circleTwo.areaAnswer.value = area;
+      }
+
+      function isNumberKey(evt) {
+        var charCode = evt.which ? evt.which : event.keyCode;
+        if (charCode > 31 && (charCode < 48 || charCode > 57)) return false;
+
+        return true;
+      }
+
+      function enterKeyPressCirc(evt) {
+        if (typeof evt == "undefined" && window.event) {
+          evt = window.event;
+        }
+        if (evt.keyCode == 13) {
+          document.getElementById("btnCalcCircum").click();
+        }
+      }
+
+      function enterKeyPressArea(evt) {
+        if (typeof evt == "undefined" && window.event) {
+          evt = window.event;
+        }
+        if (evt.keyCode == 13) {
+          document.getElementById("btnCalcArea").click();
+        }
+      }
+    </script>
+  </body>
+</html>
