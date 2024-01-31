@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <link rel="stylesheet" href="FAQ.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <div class="eachFaq">
+      <h4 class="title">Where can I find your product?</h4>
+      <div class="accordion-content">
+        <p>
+          We are currently only available in California, but to a state near you
+          as soon as possible. You can locate our amazing retailers carrying
+          Company on our Where To Find page.
+        </p>
+      </div>
+    </div>
+
+    <div class="eachFaq">
+      <h4 class="title">Where can I find your product?</h4>
+      <div class="accordion-content">
+        <p>
+          We are currently only available in California, but to a state near you
+          as soon as possible. You can locate our amazing retailers carrying
+          Company on our Where To Find page.
+        </p>
+      </div>
+    </div>
+
+    <div class="eachFaq">
+      <h4 class="title">Where can I find your product?</h4>
+      <div class="accordion-content">
+        <p>
+          We are currently only available in California, but to a state near you
+          as soon as possible. You can locate our amazing retailers carrying
+          Company on our Where To Find page.
+        </p>
+      </div>
+    </div>
+
+    <div class="eachFaq">
+      <h4 class="title">Where can I find your product?</h4>
+      <div class="accordion-content">
+        <p>
+          We are currently only available in California, but to a state near you
+          as soon as possible. You can locate our amazing retailers carrying
+          Company on our Where To Find page.
+        </p>
+      </div>
+    </div>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script>
+      $(document).ready(function () {
+        var accordionParentClass = ".eachFaq";
+        var accordionQuestionClass = ".eachFaq .title";
+        var accordionContentClass = ".accordion-content";
+
+        $(accordionParentClass).each(function () {
+          $(this).addClass("close");
+          $(this).find(accordionContentClass).hide();
+        });
+
+        $(accordionQuestionClass).click(function () {
+          var faqClass = $(this).closest(accordionParentClass).attr("class");
+          console.log(faqClass);
+
+          if (faqClass.indexOf("close") != -1) {
+            $(accordionParentClass).find(accordionContentClass).slideUp("slow"); //CLOSE ALL
+            $(accordionParentClass).addClass("close").removeClass("open"); //set all faq as closed
+
+            $(this).closest(accordionParentClass).removeClass("close");
+            $(this).closest(accordionParentClass).addClass("open");
+            $(this)
+              .closest(accordionParentClass)
+              .find(accordionContentClass)
+              .slideDown("slow");
+          } else {
+            $(this).closest(accordionParentClass).addClass("close");
+            $(this).closest(accordionParentClass).removeClass("open");
+            $(this)
+              .closest(accordionParentClass)
+              .find(accordionContentClass)
+              .slideUp("slow");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+body{font-family: 'DM Sans', sans-serif;}
+h4{ 
+  font-size: 2em;
+  margin: 0;
+  padding: 0 0 0 1em;
+  position: relative;
+}
+.eachFaq.close h4:before{ 
+  content: '+'; 
+  width: 20px; height: 20px;
+  position: absolute;
+  top: 0; left: 0;
+}
+.eachFaq.open h4:before{ 
+  content: '-'; 
+  width: 20px; height: 20px;
+  position: absolute;
+  top: 0; left: 0;
+}
+.accordion-content{
+  padding: 0 0 0 2em;
+  margin: 0 0 2em 0;
+  font-size: 1.25em;
+}
+.accordion-content p{ margin: 0; }
+.eachFaq .title{ cursor: pointer; }
+.eachFaq .title:hover{ color: red; }
