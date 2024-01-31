@@ -1,0 +1,35 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <input type="text" id="num1" />
+      <br />
+      <input type="text" id="num2" />
+      <br />
+      <input type="text" id="num3" />
+      <br />
+      <input type="text" id="num4" />
+      <br />
+      <button onclick="calc()">click me</button>
+    </div>
+    <div id="display"></div>
+    <script>
+      function calc() {
+        let num1 = Number(document.getElementById("num1").value);
+        let num2 = Number(document.getElementById("num2").value);
+        let num3 = Number(document.getElementById("num3").value);
+        let num4 = Number(document.getElementById("num4").value);
+        let sum = num1 + num2 + num3 + num4;
+        let mul = num1 * num2 + num3 + num4;
+        document.getElementById("display").innerHTML = `
+        <p>${num1}+${num2}+${num3}+${num4}=${sum}</p>
+        <p>${num1}*${num2}*${num3}*${num4}=${mul}</p>
+        `;
+      }
+    </script>
+  </body>
+</html>
